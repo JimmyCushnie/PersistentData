@@ -20,7 +20,7 @@ This means the desktop versions of your apps will have beautiful convenient SUCC
 1. Install SUCC via the package manager - [guide](https://github.com/JimmyCushnie/SUCC/wiki/Installing#as-unity-package)
 2. Install Newtonsoft.Json-for-Unity via the package manager - [guide](https://github.com/jilleJr/Newtonsoft.Json-for-Unity/wiki/Installation-via-UPM)
 3. Install PersistentData by adding the following to your `package.json`'s `dependencies` array:
-   `"com.jimmycushnie.persistentdata":""https://github.com/JimmyCushnie/PersistentData"`
+   `"com.jimmycushnie.persistentdata": "https://github.com/JimmyCushnie/PersistentData.git"`
 
 ## Usage
 
