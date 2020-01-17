@@ -22,7 +22,7 @@ namespace PersistentData
         /// <param name="key">The key the data is identified with</param>
         /// <param name="defaultValue">If there was no data saved with the given key, save and return this</param>
         /// <returns>The loaded value</returns>
-        public static T Get<T>(string key, T defaultValue) 
+        public static T Get<T>(string key, T defaultValue = default) 
             => SerializationLogic.Get(key, defaultValue);
 
         /// <summary>
