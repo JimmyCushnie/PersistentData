@@ -7,6 +7,6 @@
   "keywords": [ "config", "data", "succ" ],
   "category": "penis lmao",
   "dependencies": {
-    "com.jimmycushnie.succ" 
+    "com.jimmycushnie.succ": "https://github.com/JimmyCushnie/SUCC.git#unity"
   }
 }
