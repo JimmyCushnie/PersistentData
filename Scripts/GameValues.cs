@@ -40,7 +40,7 @@ namespace PersistentData
         /// <summary>
         /// Delete all the saved data in GameValues. Be very very careful with this!
         /// </summary>
-        public static void DeleteAll(string key)
+        public static void DeleteAll()
             => SerializationLogic.DeleteAll();
     }
 }
