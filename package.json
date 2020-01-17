@@ -1,6 +1,6 @@
 {
   "name": "com.jimmycushnie.persistentdata",
-  "displayName": "Persistent Data",
+  "displayName": "PersistentData",
   "version": "1.0.0",
   "unity": "2019.2",
   "description": "Easy cross-platform data saving and loading",
