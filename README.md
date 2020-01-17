@@ -59,7 +59,7 @@ WebGL/other (Newtonsoft.Json):
 
 In order to keep serialization consistent between platforms, it is recommended that you only save complex types without any of the above attributes on any members.
 
-#### Notes on disk writes
+### Notes on disk writes
 
 Desktop serialization uses SUCC's default behavior of saving every change to disk instantly.
 
