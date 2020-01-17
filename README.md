@@ -1,7 +1,7 @@
 # PersistentData
 Easy cross-platform data saving and loading for Unity
 
-## The Problem
+### The Problem
 
 I like to make [games](https://itch.io/c/331409/game-jam-games) that work both on desktop and in WebGL.
 
@@ -9,7 +9,7 @@ My games usually need to save data of some kind, like user settings or highscore
 
 However, SUCC doesn't work in WebGL, so my cross-platform games can't use it.
 
-## The Solution
+### The Solution
 
 PersistentData is a clean API for saving c# data. On desktop platforms, the data is saved as [SUCC](https://github.com/JimmyCushnie/SUCC). On all other platforms, the data is serialized with [Newtonsoft.Json](https://www.newtonsoft.com/json), then stored in [PlayerPrefs](https://docs.unity3d.com/ScriptReference/PlayerPrefs.html).
 
