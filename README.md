@@ -34,13 +34,13 @@ PersistentData's API is very similar to [SUCC's DataFile API](https://github.com
 using PersistentData;
 ...
 
-const string highscoreKey = "highscore";
+const string KEY_HIGHSCORE = "highscore";
 
 void SaveHighscore(int score) 
-    => GameValues.Set(highscoreKey, score);
+    => GameValues.Set(KEY_HIGHSCORE, score);
 
 int LoadHighscore() 
-    => GameValues.Get(highscoreKey, defaultValue: 0);
+    => GameValues.Get(KEY_HIGHSCORE, defaultValue: 0);
 ```
 
 ### Notes on complex type serialization
