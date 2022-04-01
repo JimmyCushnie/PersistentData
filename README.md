@@ -11,16 +11,15 @@ However, SUCC doesn't work in WebGL, so my cross-platform games can't use it.
 
 ### The Solution
 
-PersistentData is a clean API for saving c# data. On desktop platforms, the data is saved as [SUCC](https://github.com/JimmyCushnie/SUCC). On all other platforms, the data is serialized with [Newtonsoft.Json](https://www.newtonsoft.com/json), then stored in [PlayerPrefs](https://docs.unity3d.com/ScriptReference/PlayerPrefs.html).
+PersistentData is a clean API for saving c# data. On desktop platforms, the data is saved as [SUCC](https://github.com/JimmyCushnie/SUCC). On all other platforms, the data is serialized with [Newtonsoft.Json](https://docs.unity3d.com/Packages/com.unity.nuget.newtonsoft-json@3.0/manual/index.html), then stored in [PlayerPrefs](https://docs.unity3d.com/ScriptReference/PlayerPrefs.html).
 
 This means the desktop versions of your apps will have beautiful convenient SUCC data files, but your apps will still work perfectly on other platforms without you needing to write any platform-dependent code.
 
 ## Installing
 
-1. Install SUCC via the package manager - [guide](https://github.com/JimmyCushnie/SUCC/wiki/Installing#as-unity-package)
-2. Install Newtonsoft.Json-for-Unity via the package manager - [guide](https://github.com/jilleJr/Newtonsoft.Json-for-Unity/wiki/Installation-via-UPM)
-3. Install PersistentData by adding the following to your `package.json`'s `dependencies` array:
-   `"com.jimmycushnie.persistentdata": "https://github.com/JimmyCushnie/PersistentData.git"`
+1. Install [SUCC](https://github.com/JimmyCushnie/SUCC) via the package manager (Add package from git URL -> `https://github.com/JimmyCushnie/SUCC.git#unity`)
+2. Install [Newtonsoft.Json](https://docs.unity3d.com/Packages/com.unity.nuget.newtonsoft-json@3.0/manual/index.html) via the package manager (Add package by name -> `com.unity.nuget.newtonsoft-json`)
+3. Install PersistentData via the package manager (Add package from git URL -> `https://github.com/JimmyCushnie/PersistentData.git`)
 
 ## Usage
 
@@ -49,8 +48,8 @@ When you're serializing a [Complex Type](https://github.com/JimmyCushnie/SUCC/wi
 
 Desktop (SUCC):
 
-* public fields and properties are serialized unless marked with the `[SUCC.DontSave]` attribute
-* private fields and properties are serialized if and only if marked with the `[SUCC.DoSave]` attribute
+* public fields and properties are serialized unless marked with the `[SUCC.DontSaveThis]` attribute
+* private fields and properties are serialized if and only if marked with the `[SUCC.SaveThis]` attribute
 
 WebGL/other (Newtonsoft.Json):
 
