@@ -25,12 +25,21 @@ namespace PersistentData
             System.IO.File.Delete(File.FilePath);
             File = new DataFile(nameof(GameValues));
         }
+
+        public static bool AutoSave
+        {
+            get => File.AutoSave;
+            set => File.AutoSave = value;
+        }
+        public static void SaveAllDataToDisk() 
+            => File.SaveAllData();
     }
 }
 
 #else
 
 using Newtonsoft.Json;
+using UnityEditor;
 using UnityEngine;
 
 namespace PersistentData
@@ -41,6 +50,9 @@ namespace PersistentData
         {
             string json = JsonConvert.SerializeObject(value);
             PlayerPrefs.SetString(key, json);
+
+            if (AutoSave)
+                PlayerPrefs.Save();
         }
 
         internal static T Get<T>(string key, T defaultValue)
@@ -61,10 +73,24 @@ namespace PersistentData
             => PlayerPrefs.HasKey(key);
 
         internal static void DeleteKey(string key)
-            => PlayerPrefs.DeleteKey(key);
+        {
+            PlayerPrefs.DeleteKey(key);
+
+            if (AutoSave)
+                PlayerPrefs.Save();
+        }
 
         internal static void DeleteAll()
-            => PlayerPrefs.DeleteAll();
+        {
+            PlayerPrefs.DeleteAll();
+
+            if (AutoSave)
+                PlayerPrefs.Save();
+        }
+
+        public static bool AutoSave { get; set; } = true;
+        public static void SaveAllDataToDisk() 
+            => PlayerPrefs.Save(); // Worth noting: Unity automatically calls this during OnApplicationQuit
     }
 }
 

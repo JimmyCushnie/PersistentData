@@ -42,5 +42,22 @@ namespace PersistentData
         /// </summary>
         public static void DeleteAll()
             => SerializationLogic.DeleteAll();
+
+
+        /// <summary>
+        /// If <see langword="true"/>, data will be written do disk as soon as you change it. Otherwise, you must manually call <see cref="Save"/>.
+        /// This value is <see langword="true"/> unless you change it.
+        /// </summary>
+        public static bool AutoSave
+        {
+            get => SerializationLogic.AutoSave;
+            set => SerializationLogic.AutoSave = value;
+        }
+
+        /// <summary>
+        /// Writes all data changes to disk. You don't need to call this if <see cref="AutoSave"/> is <see langword="true"/> (which it is by default)
+        /// </summary>
+        public static void Save()
+            => SerializationLogic.SaveAllDataToDisk();
     }
 }

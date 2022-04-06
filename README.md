@@ -57,11 +57,3 @@ WebGL/other (Newtonsoft.Json):
 * private fields and properties are serialized if and only if marked with the `[Newtonsoft.Json.JsonProperty]` attribute
 
 In order to keep serialization consistent between platforms, it is recommended that you only save complex types without any of the above attributes on any members.
-
-### Notes on disk writes
-
-Desktop serialization uses SUCC's default behavior of saving every change to disk instantly.
-
-Non-desktop serialization uses PlayerPref's default behavior of saving only when the game closes. However, you can force a mid-game save (to prevent data loss if a crash occurs) by calling `PlayerPrefs.Save()`.
-
-If you need a modification to the above behavior, you should fork this repo.
