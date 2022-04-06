@@ -4,7 +4,7 @@ using SUCC;
 
 namespace PersistentData
 {
-    internal static class SerializationLogic
+    internal static class Backend
     {
         static DataFile File = new DataFile(nameof(GameValues));
 
@@ -44,7 +44,7 @@ using UnityEngine;
 
 namespace PersistentData
 {
-    internal static class SerializationLogic
+    internal static class Backend
     {
         internal static void Set<T>(string key, T value)
         {

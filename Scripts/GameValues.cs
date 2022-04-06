@@ -13,7 +13,7 @@ namespace PersistentData
         /// <param name="key">The key to identify the data with</param>
         /// <param name="value">The data to save</param>
         public static void Set<T>(string key, T value) 
-            => SerializationLogic.Set(key, value);
+            => Backend.Set(key, value);
 
         /// <summary>
         /// Load some data, identified by key
@@ -23,25 +23,25 @@ namespace PersistentData
         /// <param name="defaultValue">If there was no data saved with the given key, save and return this</param>
         /// <returns>The loaded value</returns>
         public static T Get<T>(string key, T defaultValue = default) 
-            => SerializationLogic.Get(key, defaultValue);
+            => Backend.Get(key, defaultValue);
 
         /// <summary>
         /// Check if saved data exists identified by this key
         /// </summary>
         public static bool KeyExists(string key)
-            => SerializationLogic.KeyExists(key);
+            => Backend.KeyExists(key);
 
         /// <summary>
         /// Delete the data saved at this key, if there is any
         /// </summary>
         public static void DeleteKey(string key)
-            => SerializationLogic.DeleteKey(key);
+            => Backend.DeleteKey(key);
 
         /// <summary>
         /// Delete all the saved data in GameValues. Be very very careful with this!
         /// </summary>
         public static void DeleteAll()
-            => SerializationLogic.DeleteAll();
+            => Backend.DeleteAll();
 
 
         /// <summary>
@@ -50,14 +50,14 @@ namespace PersistentData
         /// </summary>
         public static bool AutoSave
         {
-            get => SerializationLogic.AutoSave;
-            set => SerializationLogic.AutoSave = value;
+            get => Backend.AutoSave;
+            set => Backend.AutoSave = value;
         }
 
         /// <summary>
         /// Writes all data changes to disk. You don't need to call this if <see cref="AutoSave"/> is <see langword="true"/> (which it is by default)
         /// </summary>
         public static void Save()
-            => SerializationLogic.SaveAllDataToDisk();
+            => Backend.SaveAllDataToDisk();
     }
 }
